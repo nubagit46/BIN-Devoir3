@@ -43,13 +43,15 @@ for i in range (1, n + 1):
 # Affichage du tableau
 
 tmp = "  - "
-for j in range (1, m + 1):
+for j in range (1, m):
     tmp += B[j - 1] + " "
 print (tmp)
 
-for i in range (n + 1):
-    if i == 0:  tmp = "- "
-    else:       tmp = A[i - 1] + " "
+for i in range (n):
+    if i == 0:  
+        tmp = "- "
+    else:       
+        tmp = A[i - 1] + " "
     for j in range (m + 1):
         tmp += str (tbl[ (i, j) ]) + " "
     print (tmp)
@@ -70,6 +72,7 @@ while cell != (0,0):
         cell = (i-1, j)
     elif tcb[cell] == 'A':
         align_B = B[ j-1 ] + align_B
+        align_A = "-" + align_A
         cell = (i, j-1)
     else:
         align_A = A[ i-1 ] + align_A
